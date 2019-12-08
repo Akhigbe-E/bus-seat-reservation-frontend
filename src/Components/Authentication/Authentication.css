@@ -1,0 +1,25 @@
+.auth-form {
+  background-color: white;
+  padding: 15px 10px;
+  border-radius: 8px;
+  width: 327px;
+  height: 392px;
+  margin: 0 auto;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.151);
+}
+.auth-form-head {
+  border: 0px;
+  border-bottom: 2px #ffc010 solid;
+  color: #305570;
+  display: inline-block;
+  font-size: 22px;
+  font-family: "Century Gothic";
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+
+.auth-form-input {
+  margin-bottom: 22px;
+  text-align: left;
+}

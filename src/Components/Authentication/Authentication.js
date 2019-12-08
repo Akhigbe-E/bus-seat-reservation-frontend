@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { InputField } from "../Reusables/Reusable";
+import "./Authentication.css";
 
 export const Authentication = () => {
   const [state, setState] = useState({
@@ -9,57 +10,80 @@ export const Authentication = () => {
     hasAccount: true
   });
 
-  //User's details to be submitted
-  let userDetails = { fullName: "", email: "", password: "" };
-
   // Destructure state to get the properties
   const { fullName, email, password, hasAccount } = state;
+
+  //User's details to be submitted
+  let userDetails = { fullName: "", email: "", password: "" };
 
   // Update input field value
   const updateValue = ({ value }, name) => {
     setState({ ...state, [name]: value });
   };
 
+  //Select details to submit based on hasAccount
   const handleClick = e => {
     e.preventDefault();
-    //Select details to submit based on hasAccount
     hasAccount
       ? (userDetails = { email, password })
       : (userDetails = { fullName, email, password });
+    console.log("reachable");
+    // sumbitUserDetails(userDetails);
   };
 
-  // If Login is selected, it'll check the login DB and take required data from the state
+  // If Login is selected, it'll send userDetails to the login DB
   return (
     <div>
-      <InputField
-        name="fullName"
-        type="fullName"
-        label="Full Name"
-        hidden={hasAccount}
-        placeHolder="Enter your fullName"
-        inputValue={fullName}
-        handleChange={updateValue}
-      />
+      <div className="auth-form">
+        <h3 className="auth-form-head">{hasAccount ? "Login" : "Sign Up"}</h3>
 
-      <InputField
-        name="email"
-        type="email"
-        label="Email"
-        placeHolder="Enter your email"
-        inputValue={email}
-        handleChange={updateValue}
-      />
+        <InputField
+          name="fullName"
+          type="fullName"
+          label="Full Name"
+          placeHolder="Enter your fullName"
+          inputValue={fullName}
+          handleChange={updateValue}
+          display={hasAccount ? "none" : ""}
+          className="auth-form-input"
+        />
 
-      <InputField
-        name="password"
-        type="password"
-        label="Password"
-        placeHolder="Enter your password"
-        inputValue={password}
-        handleChange={updateValue}
-      />
-
-      <button onClick={handleClick}>-></button>
+        <InputField
+          name="email"
+          type="email"
+          label="Email"
+          placeHolder="Enter your email"
+          inputValue={email}
+          handleChange={updateValue}
+          className="auth-form-input"
+        />
+        <InputField
+          name="password"
+          type="password"
+          label="Password"
+          placeHolder="Enter your password"
+          inputValue={password}
+          handleChange={updateValue}
+          className="auth-form-input"
+        />
+        <div>
+          Alreary have an account?
+          <button
+            className="text-button"
+            style={{ display: !hasAccount ? "none" : "inline" }}
+            onClick={() => {
+              setState({ ...state, hasAccount: false });
+            }}
+          >
+            Sign Up
+          </button>
+        </div>
+        <div>
+          <button className="auth-button" onClick={handleClick}>
+            ->
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

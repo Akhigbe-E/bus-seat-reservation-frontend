@@ -1,4 +1,5 @@
 import React from "react";
+import "./Reusable.css";
 
 export const InputField = ({
   name,
@@ -6,19 +7,22 @@ export const InputField = ({
   placeHolder,
   type,
   inputValue,
-  handleChange
+  handleChange,
+  display
 }) => {
   return (
-    <div className="input-field">
-      <label>{label}</label>
+    <div style={{ display }} className="field auth-form-input">
       <input
         type={type}
+        id={name}
+        name={name}
         placeholder={placeHolder}
         value={inputValue}
         onChange={({ target }) => {
           handleChange(target, name);
         }}
       />
+      <label for={name}>{label}</label>
     </div>
   );
 };
