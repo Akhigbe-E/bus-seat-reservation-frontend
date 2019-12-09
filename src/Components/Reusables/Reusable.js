@@ -8,10 +8,11 @@ export const InputField = ({
   type,
   inputValue,
   handleChange,
-  display
+  style
 }) => {
+  console.log(style);
   return (
-    <div style={{ display }} className="field auth-form-input">
+    <div style={{ ...style }} className="field auth-form-input">
       <input
         type={type}
         id={name}

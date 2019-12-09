@@ -23,3 +23,8 @@
   margin-bottom: 22px;
   text-align: left;
 }
+
+.auth-form-inner {
+  margin: 0px auto;
+  width: 306px;
+}

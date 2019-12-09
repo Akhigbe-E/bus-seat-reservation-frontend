@@ -36,52 +36,62 @@ export const Authentication = () => {
     <div>
       <div className="auth-form">
         <h3 className="auth-form-head">{hasAccount ? "Login" : "Sign Up"}</h3>
+        <div className="auth-form-inner">
+          <InputField
+            name="fullName"
+            type="fullName"
+            label="Full Name"
+            placeHolder="Enter your Full Name"
+            inputValue={fullName}
+            handleChange={updateValue}
+            display={hasAccount ? "none" : ""}
+            style={
+              hasAccount
+                ? { display: "none" }
+                : {
+                    display: "",
+                    borderTopRightRadius: "5px",
+                    borderTopLeftRadius: "5px"
+                  }
+            }
+            className="auth-form-input"
+          />
 
-        <InputField
-          name="fullName"
-          type="fullName"
-          label="Full Name"
-          placeHolder="Enter your fullName"
-          inputValue={fullName}
-          handleChange={updateValue}
-          display={hasAccount ? "none" : ""}
-          className="auth-form-input"
-        />
-
-        <InputField
-          name="email"
-          type="email"
-          label="Email"
-          placeHolder="Enter your email"
-          inputValue={email}
-          handleChange={updateValue}
-          className="auth-form-input"
-        />
-        <InputField
-          name="password"
-          type="password"
-          label="Password"
-          placeHolder="Enter your password"
-          inputValue={password}
-          handleChange={updateValue}
-          className="auth-form-input"
-        />
-        <div>
-          Alreary have an account?
-          <button
-            className="text-button"
-            style={{ display: !hasAccount ? "none" : "inline" }}
-            onClick={() => {
-              setState({ ...state, hasAccount: false });
-            }}
-          >
-            Sign Up
-          </button>
-        </div>
-        <div>
-          <button className="auth-button" onClick={handleClick}>
-            ->
-          </button>
+          <InputField
+            name="email"
+            type="email"
+            label="Email"
+            placeHolder="Enter your email"
+            inputValue={email}
+            handleChange={updateValue}
+            className="auth-form-input"
+          />
+          <InputField
+            name="password"
+            type="password"
+            label="Password"
+            placeHolder="Enter your password"
+            inputValue={password}
+            handleChange={updateValue}
+            className="auth-form-input"
+          />
+          <div>
+            Alreary have an account?
+            <button
+              className="text-button"
+              style={{ display: !hasAccount ? "none" : "inline" }}
+              onClick={() => {
+                setState({ ...state, hasAccount: false });
+              }}
+            >
+              Sign Up
+            </button>
+          </div>
+          <div>
+            <button className="auth-button" onClick={handleClick}>
+              ->
+            </button>
+          </div>
         </div>
       </div>
     </div>
