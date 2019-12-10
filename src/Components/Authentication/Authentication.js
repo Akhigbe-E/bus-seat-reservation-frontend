@@ -5,6 +5,9 @@ import arrow from "../../resources/images/arrow.png";
 import rightMirror from "../../resources/images/rightMirror.png";
 import leftMirror from "../../resources/images/leftMirror.png";
 import busBottom from "../../resources/images/busBottom.png";
+import googleLogin from "../../resources/images/googleLogin.png";
+import facebookLogin from "../../resources/images/facebookLogin.png";
+import twitterLogin from "../../resources/images/twitterLogin.png";
 
 export const Authentication = () => {
   const [state, setState] = useState({
@@ -35,6 +38,15 @@ export const Authentication = () => {
     // sumbitUserDetails(userDetails);
   };
 
+  //Continue with google
+  const loginWithGoogle = () => {};
+
+  //Continue with facebook
+  const loginWithFacebook = () => {};
+
+  //Continue with twitter
+  const loginWithTwitter = () => {};
+
   // If Login is selected, it'll send userDetails to the login DB
   return (
     <div className="auth">
@@ -44,7 +56,13 @@ export const Authentication = () => {
           Book a bus seat from the Convinience of you home seat
         </p>
       </div>
-      <div className="auth-form">
+      <div
+        className="auth-form"
+        style={hasAccount ? { height: "392px" } : { height: "460px" }}
+      >
+        <h3 className="auth-form-head-fade">
+          {!hasAccount ? "Login" : "Sign Up"}
+        </h3>
         <h3 className="auth-form-head">{hasAccount ? "Login" : "Sign Up"}</h3>
         <div className="auth-form-inner">
           <InputField
@@ -94,21 +112,33 @@ export const Authentication = () => {
             <img src={rightMirror} className="right-mirror" />
           </div>
           <div className="signup-request">
-            Alreary have an account?
+            {hasAccount ? "Alreary have an account?" : "Don't have an account?"}
             <button
               className="text-button"
-              style={{ display: !hasAccount ? "none" : "inline" }}
               onClick={() => {
-                setState({ ...state, hasAccount: false });
+                setState({ ...state, hasAccount: !hasAccount });
               }}
             >
-              Sign Up
+              {hasAccount ? "Sign Up" : "Login"}
             </button>
           </div>
           <div className="bus-bottom">
             <img src={busBottom} className="bus-bottom-img" />
           </div>
-          <div className="social-media"></div>
+        </div>
+        <div className="social-media">
+          <p className="continue-with"> Or continue with</p>
+          <div className="social-media-buttons">
+            <button className="text-button" onClick={loginWithGoogle}>
+              <img src={googleLogin} className="social-media-icon" />
+            </button>
+            <button className="text-button" onClick={loginWithFacebook}>
+              <img src={facebookLogin} className="social-media-icon" />
+            </button>
+            <button className="text-button " onClick={loginWithTwitter}>
+              <img src={twitterLogin} className="social-media-icon-last" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
