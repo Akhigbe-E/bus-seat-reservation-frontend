@@ -16,11 +16,12 @@ h1 {
   font-size: 22px;
   margin: 0;
 }
-.auth {
+.make-responsive {
   background-image: url("../../resources/images/Group97.png");
   background-size: 100% 54%;
   background-repeat: no-repeat;
 }
+
 .auth-form {
   background-color: white;
   border-radius: 8px;
@@ -128,9 +129,24 @@ h1 {
   margin-right: 30px;
 }
 
-@media (min-width: 768px) {
-}
-
 .social-media-icon-last {
   margin-right: 0px;
+}
+
+@media (min-width: 1024px) {
+  .make-responsive {
+    background: none;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .auth {
+    padding-top: 30%;
+    background-image: url("../../resources/images/Group97.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+  .responsive-auth-form {
+    padding-top: 15%;
+  }
 }
