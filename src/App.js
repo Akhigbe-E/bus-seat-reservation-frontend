@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Authentication />
-      <Reservation />
+      {/* <Reservation /> */}
     </div>
   );
 }

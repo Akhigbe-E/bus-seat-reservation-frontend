@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { InputField } from "../Reusables/Reusable";
 import "./Authentication.css";
+import arrow from "../../resources/images/arrow.png";
+import rightMirror from "../../resources/images/rightMirror.png";
+import leftMirror from "../../resources/images/leftMirror.png";
+import busBottom from "../../resources/images/busBottom.png";
 
 export const Authentication = () => {
   const [state, setState] = useState({
@@ -33,7 +37,13 @@ export const Authentication = () => {
 
   // If Login is selected, it'll send userDetails to the login DB
   return (
-    <div>
+    <div className="auth">
+      <div className="heading">
+        <h1>Welcome</h1>
+        <p className="sub-heading">
+          Book a bus seat from the Convinience of you home seat
+        </p>
+      </div>
       <div className="auth-form">
         <h3 className="auth-form-head">{hasAccount ? "Login" : "Sign Up"}</h3>
         <div className="auth-form-inner">
@@ -44,7 +54,8 @@ export const Authentication = () => {
             placeHolder="Enter your Full Name"
             inputValue={fullName}
             handleChange={updateValue}
-            display={hasAccount ? "none" : ""}
+            className={!hasAccount ? "first-field" : ""}
+            // display={hasAccount ? "none" : ""}
             style={
               hasAccount
                 ? { display: "none" }
@@ -54,7 +65,6 @@ export const Authentication = () => {
                     borderTopLeftRadius: "5px"
                   }
             }
-            className="auth-form-input"
           />
 
           <InputField
@@ -65,6 +75,7 @@ export const Authentication = () => {
             inputValue={email}
             handleChange={updateValue}
             className="auth-form-input"
+            className={hasAccount ? "first-field" : ""}
           />
           <InputField
             name="password"
@@ -73,9 +84,16 @@ export const Authentication = () => {
             placeHolder="Enter your password"
             inputValue={password}
             handleChange={updateValue}
-            className="auth-form-input"
+            className="last-field"
           />
-          <div>
+          <div className="button-mirror">
+            <img src={leftMirror} className="left-mirror" />
+            <button className="auth-button" onClick={handleClick}>
+              <img src={arrow} className="auth-button-img" />
+            </button>
+            <img src={rightMirror} className="right-mirror" />
+          </div>
+          <div className="signup-request">
             Alreary have an account?
             <button
               className="text-button"
@@ -87,11 +105,10 @@ export const Authentication = () => {
               Sign Up
             </button>
           </div>
-          <div>
-            <button className="auth-button" onClick={handleClick}>
-              ->
-            </button>
+          <div className="bus-bottom">
+            <img src={busBottom} className="bus-bottom-img" />
           </div>
+          <div className="social-media"></div>
         </div>
       </div>
     </div>

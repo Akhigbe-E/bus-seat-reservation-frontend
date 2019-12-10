@@ -45,6 +45,12 @@ export const PickDestination = ({ locationSelected, busDestinations }) => {
           }
         })}
       </ul>
+      <h3>Available Destinations</h3>
+      <ul>
+        {availableDestinations.map(({ destination, price }) => (
+          <li key={destination}>{destination}</li>
+        ))}
+      </ul>
     </div>
   );
 };

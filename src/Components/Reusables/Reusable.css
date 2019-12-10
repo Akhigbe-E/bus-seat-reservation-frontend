@@ -5,7 +5,7 @@
 .field {
   display: flex;
   flex-flow: column-reverse;
-  margin-bottom: 1em;
+  /* margin-bottom: 1em; */
 }
 /**
   * Add a transition to the label and input.
@@ -20,25 +20,37 @@ input {
 }
 
 input {
-  font-size: 1.5em;
-  border: 1px solid black;
-  border-bottom: 1px solid #ccc;
+  font-size: 20px;
+  border: 1.5px solid black;
   font-family: inherit;
   -webkit-appearance: none;
-  border-radius: 0;
   padding: 0;
-  padding-left: 5px;
+  padding: 6px 10px;
   cursor: text;
+  color: #1d1d1d;
+  background-color: #f2f5f9;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+  width: 250px;
+}
+
+.first-field {
+  border-radius: 12px 12px 0 0;
+}
+.last-field {
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 10px;
 }
 
 input:focus {
   outline: 0;
-  border-bottom: 1px solid #666;
+  border-bottom: 1.5px solid black;
 }
 
 label {
-  text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-size: 15px;
+  margin-left: 35px;
 }
 /**
   * Translate down and scale the label up to cover the placeholder,
