@@ -64,7 +64,12 @@ export const Authentication = () => {
           className="auth-form"
           style={hasAccount ? { height: "392px" } : { height: "460px" }}
         >
-          <h3 className="auth-form-head-fade">
+          <h3
+            className="auth-form-head-fade"
+            onClick={() => {
+              setState({ ...state, hasAccount: !hasAccount });
+            }}
+          >
             {!hasAccount ? "Login" : "Sign Up"}
           </h3>
           <h3 className="auth-form-head">{hasAccount ? "Login" : "Sign Up"}</h3>
