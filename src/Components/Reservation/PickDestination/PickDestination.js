@@ -3,9 +3,9 @@ import "./PickDestination.css";
 
 export const PickDestination = props => {
   const { busDetails } = props;
+  console.log(busDetails);
   const { locationSelected, busDestinations } = busDetails;
   const [availableDestinations, setAvailableDestinations] = useState([]);
-  console.log(busDetails);
   useEffect(() => {
     priceGenerator(locationSelected, busDestinations);
   }, [busDestinations]);

@@ -1,0 +1,43 @@
+.select-seat {
+  margin: 0 auto;
+  text-align: center;
+  background-image: url("../../../resources/images/glass.png");
+  background-repeat: no-repeat;
+  background-size: 103% 100%;
+  background-position: center;
+  height: 245px;
+  width: 375px;
+}
+.bus {
+  margin: 0 auto;
+  text-align: center;
+  background-image: url("../../../resources/images/bus.png");
+  background-repeat: no-repeat;
+  background-size: 103% 100%;
+  background-position: center;
+  height: 430px;
+  width: 265px;
+  transition: 0.5s ease-in;
+  position: relative;
+}
+.seat-selected {
+  width: 132.5px;
+  height: 215px;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+.selected-seat {
+  background-image: url("../../../resources/images/redSeat.png");
+  background-repeat: no-repeat;
+  background-size: 103% 100%;
+  background-position: center;
+  height: 47px;
+  width: 51px;
+}
+.bus-seat {
+  position: absolute;
+  top: 12em;
+  left: 2em;
+}

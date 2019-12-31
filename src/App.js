@@ -6,6 +6,7 @@ import { Authentication } from "./Components/Authentication/Authentication";
 import { PickTimeAndLocation } from "./Components/Reservation/PickTimeAndLocation/PickTimeAndLocation";
 import { Reservation } from "./Components/Reservation/Reservation";
 import { PickDestination } from "./Components/Reservation/PickDestination/PickDestination";
+import { SelectSeat } from "./Components/Reservation/SelectSeat/SelectSeat";
 
 function App() {
   const [busDetails, setBusDetails] = useState("...");
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <div className="App">
         <Route exact path="/" component={Authentication} />
+        <Route path="/seat" component={SelectSeat} />
         <Route
           path="/book"
           render={props => (
@@ -34,7 +36,7 @@ function App() {
             <PickDestination {...props} busDetails={busDetails} />
           )}
         />
-        <Route path="/seat" component={Reservation} />
+        {/* <Route path="/seat" component={Reservation} /> */}
       </div>
     </Router>
   );
