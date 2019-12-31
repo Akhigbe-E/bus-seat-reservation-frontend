@@ -1,3 +1,7 @@
+ul {
+  margin: 0 auto;
+  height: auto;
+}
 /* DEPARTURE */
 .departure-f {
   margin-top: -7px;
@@ -40,8 +44,34 @@
   text-align: left;
   font-size: 20px;
   color: #141414;
+  margin-top: 30px;
+  margin-left: 1em;
 }
 
-.destination-selection {
-  margin: auto 2em;
+/* .destination-selection {
+  margin-left: 2em;
+} */
+.destination-category-list {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: auto;
+  width: 100%;
+  white-space: nowrap;
+}
+.destination-category-list-item {
+  background-image: url("../../../resources/images/door.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-size: 40px;
+  width: 182px;
+  height: 125px;
+  list-style-type: none;
+  color: rgb(255, 255, 255);
+  transition: 0.1s ease-in;
+  display: inline-block;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+.destination-category-list-item li {
+  padding-top: 62px;
 }

@@ -60,7 +60,7 @@ export const PickTimeAndLocation = props => {
     setActive(true);
     setTimeout(() => {
       props.history.push("/destination");
-    }, 2100);
+    }, 2000);
   };
 
   useEffect(() => {

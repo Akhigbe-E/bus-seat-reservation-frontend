@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./PickDestination.css";
 
-export const PickDestination = ({ busDetails }) => {
+export const PickDestination = props => {
+  const { busDetails } = props;
   const { locationSelected, busDestinations } = busDetails;
   const [availableDestinations, setAvailableDestinations] = useState([]);
   console.log(busDetails);
@@ -36,30 +37,45 @@ export const PickDestination = ({ busDetails }) => {
     });
     setAvailableDestinations(avDistances);
   };
+
+  const handleDepartureClick = () => {
+    props.history.push("/book");
+  };
   return (
     <div>
       <div className="departure-f">
         <div className="question-head-f">Departure from</div>
         <div className="departure-list-f">
-          <p>{locationSelected}</p>
+          <p onClick={handleDepartureClick}>{locationSelected}</p>
         </div>
       </div>
       <div className="destination-selection">
-        <p className="destination-category">AVAILABLE DESTINATIONS</p>
-        <ul>
+        {/* <div className="animated slideInUp"> */}
+        <p className="destination-category animated flipInX">
+          AVAILABLE DESTINATIONS
+        </p>
+        <ul className="destination-category-list animated slideInUp">
           {availableDestinations.map(({ destination, price }) => (
-            <li key={destination}>{destination}</li>
+            <div className="destination-category-list-item">
+              <li key={destination}>{destination}</li>
+            </div>
           ))}
         </ul>
-        <p className="destination-category">CHEAPEST</p>
-        <ul>
-          {availableDestinations.map(({ destination, price }) => {
-            if (price < 100) {
-              console.log({ destination, price });
-              return <li key={destination}>{destination}</li>;
-            }
-          })}
-        </ul>
+        {/* </div> */}
+        <div className="">
+          <p className="destination-category animated flipInX">CHEAPEST</p>
+          <ul className="destination-category-list animated slideInUp">
+            {availableDestinations.map(({ destination, price }) => {
+              if (price < 100) {
+                return (
+                  <div className="destination-category-list-item">
+                    <li key={destination}>{destination}</li>
+                  </div>
+                );
+              }
+            })}
+          </ul>
+        </div>
       </div>
     </div>
   );
