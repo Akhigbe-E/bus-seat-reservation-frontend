@@ -1,0 +1,41 @@
+/* DEPARTURE */
+.departure-f {
+  text-align: center;
+  background-image: url("../../../resources/images/destinationBg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.question-head-f {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.897);
+  padding: 30px 0;
+}
+.departure-f .question-head-f {
+  padding-bottom: 0;
+}
+
+.departure-list-f p {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 90px;
+  color: white;
+  transition: 0.1s ease-in;
+  display: inline-block;
+  /* margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.363); */
+  /* width: 100px;
+    height: 100px; */
+  /* transform: rotate(90deg);
+    transform-origin: right top; */
+}
+/* 
+
+
+ */
+/* DESTINATION */
+.destination-category {
+  text-align: left;
+  font-size: 20px;
+  color: #141414;
+}

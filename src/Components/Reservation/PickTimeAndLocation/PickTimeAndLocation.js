@@ -56,8 +56,11 @@ export const PickTimeAndLocation = props => {
   };
 
   const checkDestinationsOfSelectedBus = bus => {
-    props.selectedLocation(bus.location);
+    props.selectedBus(bus);
     setActive(true);
+    setTimeout(() => {
+      props.history.push("/destination");
+    }, 2100);
   };
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 //When the location has been selected, do the animetion i.e the movable SVG should be resident here
 import React, { useEffect, useState } from "react";
 import { PickTimeAndLocation } from "./PickTimeAndLocation/PickTimeAndLocation";
-import { PickDestination } from "./PickDestination";
+import { PickDestination } from "./PickDestination/PickDestination";
 
 export const Reservation = () => {
   const [destinations, setDestinations] = useState([]);

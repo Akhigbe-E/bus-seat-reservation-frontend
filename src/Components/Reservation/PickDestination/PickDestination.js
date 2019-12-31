@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import "./PickDestination.css";
 
-export const PickDestination = ({ locationSelected, busDestinations }) => {
+export const PickDestination = ({ busDetails }) => {
+  const { locationSelected, busDestinations } = busDetails;
   const [availableDestinations, setAvailableDestinations] = useState([]);
-
+  console.log(busDetails);
   useEffect(() => {
     priceGenerator(locationSelected, busDestinations);
   }, [busDestinations]);
@@ -36,21 +38,29 @@ export const PickDestination = ({ locationSelected, busDestinations }) => {
   };
   return (
     <div>
-      <h3>Cheapest</h3>
-      <ul>
-        {availableDestinations.map(({ destination, price }) => {
-          if (price < 100) {
-            console.log({ destination, price });
-            return <li key={destination}>{destination}</li>;
-          }
-        })}
-      </ul>
-      <h3>Available Destinations</h3>
-      <ul>
-        {availableDestinations.map(({ destination, price }) => (
-          <li key={destination}>{destination}</li>
-        ))}
-      </ul>
+      <div className="departure-f">
+        <div className="question-head-f">Departure from</div>
+        <div className="departure-list-f">
+          <p>{locationSelected}</p>
+        </div>
+      </div>
+      <div className="destination-selection">
+        <p className="destination-category">Available Destinations</p>
+        <ul>
+          {availableDestinations.map(({ destination, price }) => (
+            <li key={destination}>{destination}</li>
+          ))}
+        </ul>
+        <p className="destination-category">Cheapest</p>
+        <ul>
+          {availableDestinations.map(({ destination, price }) => {
+            if (price < 100) {
+              console.log({ destination, price });
+              return <li key={destination}>{destination}</li>;
+            }
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
