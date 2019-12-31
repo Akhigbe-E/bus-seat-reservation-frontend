@@ -9,7 +9,7 @@ import googleLogin from "../../resources/images/googleLogin.png";
 import facebookLogin from "../../resources/images/facebookLogin.png";
 import twitterLogin from "../../resources/images/twitterLogin.png";
 
-export const Authentication = () => {
+export const Authentication = props => {
   const [state, setState] = useState({
     fullName: "",
     email: "",
@@ -35,6 +35,7 @@ export const Authentication = () => {
       ? (userDetails = { email, password })
       : (userDetails = { fullName, email, password });
     console.log("reachable");
+    props.history.push("/book");
     // sumbitUserDetails(userDetails);
   };
 

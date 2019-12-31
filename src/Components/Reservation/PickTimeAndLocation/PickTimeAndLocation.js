@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./PickTimeAndLocation.css";
 
 export const PickTimeAndLocation = props => {
   const buses = [
@@ -28,9 +29,8 @@ export const PickTimeAndLocation = props => {
     }
   ];
   const [availableTimeState, setAvailableTimeState] = useState([]);
-  const [availableBuses, setAvailableBuses] = useState([
-    { location: "Nearest Location" }
-  ]);
+  const [active, setActive] = useState(false);
+  const [availableBuses, setAvailableBuses] = useState([{ location: "..." }]);
   //select a time, select locations available in that time, select destinations available for that location in that time, select seat
 
   //accept buses as a parameter
@@ -64,35 +64,46 @@ export const PickTimeAndLocation = props => {
   }, [0]);
 
   return (
-    <div>
-      <ul>
-        {availableTimeState.map(time => {
-          return (
+    <div className="time-location">
+      <div className="question-head">What time should the bus leave?</div>
+      <div className="time">
+        {/* Return all the available time */}
+        <ul className="time-list">
+          {availableTimeState.map(time => (
             <li
+              className="time-list-item"
+              // className={active ? "active" : ...""}
               value={time}
               onClick={e => {
+                setActive(true);
                 checkLocationsWithBusesAtSelectedTime(e.target.value, buses);
               }}
             >
-              {time}
+              {time} : 00
             </li>
-          );
-        })}
-      </ul>
-      <ul>
-        {availableBuses.map(bus => {
-          return (
-            <li
-              onClick={e => {
-                checkDestinationsOfSelectedBus(bus);
-                props.selectedLocation(bus.location);
-              }}
-            >
-              {bus.location}
-            </li>
-          );
-        })}
-      </ul>
+          ))}
+        </ul>
+      </div>
+
+      {/* Return the locations that have buses at the selected time */}
+      <div className="departure">
+        <div className="question-head">Departure from</div>
+        <ul className="departure-list">
+          {availableBuses.map(bus => {
+            return (
+              <li
+                className="departure-list-item"
+                onClick={e => {
+                  checkDestinationsOfSelectedBus(bus);
+                  props.selectedLocation(bus.location);
+                }}
+              >
+                {bus.location}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 };

@@ -24,7 +24,7 @@ export const InputField = ({
           handleChange(target, name);
         }}
       />
-      <label for={name}>{label}</label>
+      <label htmlFor={name}>{label}</label>
     </div>
   );
 };

@@ -1,0 +1,91 @@
+.time-location {
+  padding: 0 30px;
+  background-color: #ffc010;
+  background: url("../../../resources/images/Group96.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.question-head {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.897);
+  padding: 30px 0;
+}
+
+li {
+  list-style: none;
+  margin: -5px auto;
+}
+.time {
+  text-align: right;
+}
+ul {
+  overflow: scroll;
+  margin: 0;
+  padding: 0;
+  height: 170px;
+  display: inline-block;
+  margin-bottom: 70px;
+}
+.time-list-item {
+  list-style-type: none;
+  color: rgba(255, 255, 255, 0.349);
+  font-size: 50px;
+  transition: 0.1s ease-in;
+}
+/* 
+li:visited {
+  font-size: 30px;
+  color: black;
+  margin: auto 0;
+} */
+.time-list-item:hover {
+  font-size: 70px;
+  color: white;
+}
+/* .active {
+  font-size: 70px;
+  color: white;
+} */
+/* 
+
+
+
+ */
+
+/* DEPARTURE */
+.departure {
+  text-align: center;
+}
+.departure .question-head {
+  padding-bottom: 0;
+}
+.departure-list {
+  color: white;
+  margin: 0;
+  /* width: 100px;
+  height: 70px; */
+  overflow-x: scroll;
+  overflow-y: hidden;
+  height: 120px;
+  width: 180px;
+  white-space: nowrap;
+}
+.departure-list-item {
+  font-size: 70px;
+  list-style-type: none;
+  color: rgba(255, 255, 255, 0.349);
+  transition: 0.1s ease-in;
+  display: inline-block;
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(255, 255, 255, 0.363);
+  /* width: 100px;
+  height: 100px; */
+  /* transform: rotate(90deg);
+  transform-origin: right top; */
+}
+
+.departure-list-item:hover {
+  font-size: 90px;
+  color: white;
+}
