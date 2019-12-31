@@ -56,7 +56,8 @@ export const PickTimeAndLocation = props => {
   };
 
   const checkDestinationsOfSelectedBus = bus => {
-    props.selectedBus(bus);
+    props.selectedLocation(bus.location);
+    setActive(true);
   };
 
   useEffect(() => {
@@ -64,7 +65,11 @@ export const PickTimeAndLocation = props => {
   }, [0]);
 
   return (
-    <div className="time-location">
+    <div
+      className={
+        active ? "time-location animated slideOutUp delay-1s" : "time-location"
+      }
+    >
       <div className="question-head">What time should the bus leave?</div>
       <div className="time">
         {/* Return all the available time */}
@@ -75,7 +80,6 @@ export const PickTimeAndLocation = props => {
               // className={active ? "active" : ...""}
               value={time}
               onClick={e => {
-                setActive(true);
                 checkLocationsWithBusesAtSelectedTime(e.target.value, buses);
               }}
             >
@@ -95,7 +99,6 @@ export const PickTimeAndLocation = props => {
                 className="departure-list-item"
                 onClick={e => {
                   checkDestinationsOfSelectedBus(bus);
-                  props.selectedLocation(bus.location);
                 }}
               >
                 {bus.location}

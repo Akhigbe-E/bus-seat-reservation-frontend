@@ -16,6 +16,7 @@ export const Authentication = props => {
     password: "",
     hasAccount: true
   });
+  const [animate, setAnimate] = useState(true);
 
   // Destructure state to get the properties
   const { fullName, email, password, hasAccount } = state;

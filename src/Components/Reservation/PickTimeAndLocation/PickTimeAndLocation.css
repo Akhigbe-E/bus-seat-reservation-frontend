@@ -4,6 +4,7 @@
   background: url("../../../resources/images/Group96.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  animation-duration: 3s;
 }
 .question-head {
   font-size: 20px;

@@ -8,11 +8,22 @@ import { Reservation } from "./Components/Reservation/Reservation";
 import { PickDestination } from "./Components/Reservation/PickDestination";
 
 function App() {
+  const handleDepartureLocation = location => {
+    console.log(location);
+  };
   return (
     <Router>
       <div className="App">
         <Route exact path="/" component={Authentication} />
-        <Route path="/book" component={PickTimeAndLocation} />
+        <Route
+          path="/book"
+          render={props => (
+            <PickTimeAndLocation
+              {...props}
+              selectedLocation={handleDepartureLocation}
+            />
+          )}
+        />
         <Route path="/destination" component={PickDestination} />
         <Route path="/seat" component={Reservation} />
       </div>
