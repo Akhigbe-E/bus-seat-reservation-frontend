@@ -45,13 +45,13 @@ export const PickDestination = ({ busDetails }) => {
         </div>
       </div>
       <div className="destination-selection">
-        <p className="destination-category">Available Destinations</p>
+        <p className="destination-category">AVAILABLE DESTINATIONS</p>
         <ul>
           {availableDestinations.map(({ destination, price }) => (
             <li key={destination}>{destination}</li>
           ))}
         </ul>
-        <p className="destination-category">Cheapest</p>
+        <p className="destination-category">CHEAPEST</p>
         <ul>
           {availableDestinations.map(({ destination, price }) => {
             if (price < 100) {

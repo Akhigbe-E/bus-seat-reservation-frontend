@@ -1,10 +1,12 @@
 .time-location {
-  padding: 0 30px;
+  animation-duration: 3s;
   background-color: #ffc010;
   background: url("../../../resources/images/Group96.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  animation-duration: 3s;
+  background-size: 103% 100%;
+  background-position: center;
+  margin-top: -10px;
+  padding: 0 30px;
 }
 .question-head {
   font-size: 20px;

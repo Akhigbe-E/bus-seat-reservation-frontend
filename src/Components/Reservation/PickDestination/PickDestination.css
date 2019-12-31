@@ -1,9 +1,11 @@
 /* DEPARTURE */
 .departure-f {
+  margin-top: -7px;
   text-align: center;
   background-image: url("../../../resources/images/destinationBg.png");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 103% 100%;
+  background-position: center;
 }
 .question-head-f {
   font-size: 20px;
@@ -38,4 +40,8 @@
   text-align: left;
   font-size: 20px;
   color: #141414;
+}
+
+.destination-selection {
+  margin: auto 2em;
 }
