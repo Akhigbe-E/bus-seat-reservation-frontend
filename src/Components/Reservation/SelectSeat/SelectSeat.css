@@ -36,6 +36,14 @@ button {
   height: 47px;
   width: 51px;
 }
+.seat-dormant {
+  background-image: url("../../../resources/images/greenSeat.png");
+  background-repeat: no-repeat;
+  background-size: 103% 100%;
+  background-position: center;
+  height: 47px;
+  width: 51px;
+}
 .bus-seat {
   position: absolute;
   top: 12em;
