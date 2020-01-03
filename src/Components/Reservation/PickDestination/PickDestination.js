@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./PickDestination.css";
+import "./PickDestination.scss";
 
 export const PickDestination = props => {
   const { busDetails } = props;
