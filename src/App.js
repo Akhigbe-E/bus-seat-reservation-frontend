@@ -36,6 +36,7 @@ function App() {
             <PickDestination {...props} busDetails={busDetails} />
           )}
         />
+        <Route path="/ticket" render={props => <Ticket {...props} />} />
         {/* <Route path="/seat" component={Reservation} /> */}
       </div>
     </Router>

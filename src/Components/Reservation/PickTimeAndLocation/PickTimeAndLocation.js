@@ -73,7 +73,7 @@ export const PickTimeAndLocation = props => {
         active ? "time-location animated slideOutUp delay-1s" : "time-location"
       }
     >
-      <div className="question-head">What time should the bus leave?</div>
+      <p className="question-head">What time should the bus leave?</p>
       <div className="time">
         {/* Return all the available time */}
         <ul className="time-list">
