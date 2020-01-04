@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./PickTimeAndLocation.css";
+import "./PickTimeAndLocation.scss";
 
 export const PickTimeAndLocation = props => {
   const buses = [
