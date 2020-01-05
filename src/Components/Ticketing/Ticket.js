@@ -4,7 +4,7 @@ import "./Ticket.scss";
 export const Ticket = props => {
   return (
     <div className="ticket">
-      <div className="ticket-main animated slideOutUp delay-1s">
+      <div className="ticket-main animated slideInUp delay-1s">
         <p className="question-head">Booking Pass</p>
         <div className="direction-location">
           <p className="location">CST</p>

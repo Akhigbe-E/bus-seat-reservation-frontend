@@ -1,16 +1,34 @@
+$backgroundColour: #f2f5f9;
+.ticket {
+  background-color: $backgroundColour;
+  height: 100vh;
+}
+p {
+  margin: 0;
+}
 .ticket-main {
   animation-duration: 3s;
   // background-color: #ffc010;
-  background: url("../../../resources/images/ticket.png");
+  background: url("../../resources/images/ticket.png");
   background-repeat: no-repeat;
-  background-size: 103% 100%;
+  background-size: 100% 100%;
   background-position: center;
-  margin-top: -10px;
+  margin: 0 auto;
   padding: 0 30px;
+  height: 521px;
 }
 
 .question-head {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.897);
   padding: 30px 0;
+}
+.direction-location {
+  margin-bottom: 40px;
+}
+.vehicle-seat {
+  margin-bottom: 55px;
+}
+.time {
+  margin-bottom: 55px;
 }

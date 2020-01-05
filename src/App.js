@@ -7,7 +7,7 @@ import { PickTimeAndLocation } from "./Components/Reservation/PickTimeAndLocatio
 import { Reservation } from "./Components/Reservation/Reservation";
 import { PickDestination } from "./Components/Reservation/PickDestination/PickDestination";
 import { SelectSeat } from "./Components/Reservation/SelectSeat/SelectSeat";
-
+import { Ticket } from "./Components/Ticketing/Ticket";
 function App() {
   const [busDetails, setBusDetails] = useState("...");
   const handleDepartureLocation = ({ location, destinations }) => {
