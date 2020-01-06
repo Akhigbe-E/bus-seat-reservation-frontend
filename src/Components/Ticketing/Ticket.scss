@@ -15,7 +15,8 @@ p {
   background-position: center;
   margin: 0 auto;
   padding: 0 30px;
-  height: 521px;
+  height: 585px;
+  width: auto;
 }
 
 .question-head {
@@ -24,11 +25,42 @@ p {
   padding: 30px 0;
 }
 .direction-location {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
+  display: flex;
 }
 .vehicle-seat {
-  margin-bottom: 55px;
+  margin-bottom: 40px;
+  display: flex;
+  text-align: left;
+}
+.ticket-section {
+  display: inline-block;
+  width: 50%;
+  padding-left: 15px;
+}
+.two {
+  margin-left: 20px;
 }
 .time {
-  margin-bottom: 55px;
+  margin-bottom: 20px;
+  display: flex;
+  text-align: left;
+}
+.location {
+  font-size: 60px;
+  display: inline-block;
+}
+.direction {
+  width: 91px;
+  height: 22.56px;
+  padding-top: 35px;
+}
+.ticket-section-head {
+  font-size: 13px;
+  opacity: 53%;
+  font-weight: bold;
+}
+.ticket-section-body {
+  font-size: 22px;
+  color: black;
 }
