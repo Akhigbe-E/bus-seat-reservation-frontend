@@ -1,11 +1,15 @@
 $backgroundColour: #f2f5f9;
 .ticket {
   background-color: $backgroundColour;
-  height: 100vh;
+  margin-bottom: 0;
+  width: 100%;
 }
 p {
   margin: 0;
 }
+// .wrapper {
+//   height:  90%;
+// }
 .ticket-main {
   animation-duration: 3s;
   // background-color: #ffc010;
@@ -16,7 +20,7 @@ p {
   margin: 0 auto;
   padding: 0 30px;
   height: 585px;
-  width: auto;
+  width: 315px;
 }
 
 .question-head {
@@ -38,13 +42,30 @@ p {
   width: 50%;
   padding-left: 15px;
 }
+.bar-code img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
 .two {
   margin-left: 20px;
 }
 .time {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   text-align: left;
+}
+.passenger-barcode {
+  display: flex;
+}
+.passenger-barcode-section-first {
+  width: 40%;
+  padding-top: 25%;
+  display: inline-block;
+}
+.passenger-barcode-section-second {
+  width: 60%;
+  display: inline-block;
 }
 .location {
   font-size: 60px;
@@ -57,10 +78,36 @@ p {
 }
 .ticket-section-head {
   font-size: 13px;
-  opacity: 53%;
+  color: #7185c5;
   font-weight: bold;
+}
+.first {
+  color: black;
+  opacity: 53%;
 }
 .ticket-section-body {
   font-size: 22px;
   color: black;
+}
+
+.ticket-secondary {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+  p {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 190px;
+    opacity: 48%;
+  }
+  .ticket-button {
+    width: 325px;
+    background-color: #46a530;
+    border: 1px solid #bfdeb8;
+    font-size: 20px;
+    color: white;
+    padding: 10px 0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
 }
