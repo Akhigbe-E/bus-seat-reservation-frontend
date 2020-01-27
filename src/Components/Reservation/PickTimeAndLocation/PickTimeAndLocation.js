@@ -1,33 +1,38 @@
 import React, { useEffect, useState } from "react";
 import "./PickTimeAndLocation.scss";
+import { ListItem, TimeListItem } from "./ListItem";
 
 export const PickTimeAndLocation = props => {
-  const buses = [
+  const [buses, setbuses] = useState([
     {
       name: "Hilx bus",
       timeAtLocation: 7,
+      timeSelected: true,
       location: "CST",
       destinations: ["CAF", "CDS", "COE"]
     },
     {
       name: "Hilx bus",
       timeAtLocation: 7,
+      timeSelected: false,
       location: "CDS",
       destinations: ["CAF", "CDS", "COE"]
     },
     {
       name: "Mazda bus",
       timeAtLocation: 9,
+      timeSelected: false,
       location: "CDS",
       destinations: ["CAF", "CST", "COE"]
     },
     {
       name: "Tesla bus",
       timeAtLocation: 12,
+      timeSelected: false,
       location: "COE",
       destinations: ["CAF", "CDS", "COE"]
     }
-  ];
+  ]);
   const [availableTimeState, setAvailableTimeState] = useState([]);
   const [active, setActive] = useState(false);
   const [availableBuses, setAvailableBuses] = useState([{ location: "..." }]);
@@ -37,7 +42,6 @@ export const PickTimeAndLocation = props => {
   const checkAvailableTime = buses => {
     const timeAvailable = [];
     let timeToDisplay = [];
-
     buses.forEach(({ timeAtLocation }) => {
       timeAvailable.push(timeAtLocation);
       timeToDisplay = [...new Set(timeAvailable)];
@@ -63,6 +67,16 @@ export const PickTimeAndLocation = props => {
     }, 2000);
   };
 
+  const handleTimeSelect = selectedTime => {
+    for (let i = 0; i < buses.length; i++) {
+      setbuses(...(buses[i].timeSelected = false));
+      console.log(buses);
+      if (buses[i].timeAtLocation === selectedTime) {
+        setbuses(...(buses[i].timeSelected = true));
+      }
+    }
+  };
+
   useEffect(() => {
     checkAvailableTime(buses);
   }, [0]);
@@ -78,16 +92,23 @@ export const PickTimeAndLocation = props => {
         {/* Return all the available time */}
         <ul className="time-list">
           {availableTimeState.map(time => (
-            <li
-              className="time-list-item"
-              // className={active ? "active" : ...""}
+            <TimeListItem
               value={time}
-              onClick={e => {
-                checkLocationsWithBusesAtSelectedTime(e.target.value, buses);
-              }}
-            >
-              {time} : 00
-            </li>
+              buses={buses}
+              clicked={buses.timeSelected}
+              handleTimeSelected={checkLocationsWithBusesAtSelectedTime}
+              onClick={handleTimeSelect}
+            />
+            // <li
+            //   className="time-list-item"
+            //   // className={active ? "active" : ...""}
+            //   value={time}
+            //   onClick={e => {
+            //     checkLocationsWithBusesAtSelectedTime(e.target.value, buses);
+            //   }}
+            // >
+            //   {time} : 00
+            // </li>
           ))}
         </ul>
       </div>
@@ -98,14 +119,10 @@ export const PickTimeAndLocation = props => {
         <ul className="departure-list">
           {availableBuses.map(bus => {
             return (
-              <li
-                className="departure-list-item"
-                onClick={e => {
-                  checkDestinationsOfSelectedBus(bus);
-                }}
-              >
-                {bus.location}
-              </li>
+              <ListItem
+                bus={bus}
+                handleSelectedBus={checkDestinationsOfSelectedBus}
+              />
             );
           })}
         </ul>
