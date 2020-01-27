@@ -68,11 +68,13 @@ export const PickTimeAndLocation = props => {
   };
 
   const handleTimeSelect = selectedTime => {
+    let busesCopy = buses;
     for (let i = 0; i < buses.length; i++) {
-      setbuses(...(buses[i].timeSelected = false));
-      console.log(buses);
+      busesCopy[i].timeSelected = false;
+      setbuses(busesCopy);
       if (buses[i].timeAtLocation === selectedTime) {
-        setbuses(...(buses[i].timeSelected = true));
+        busesCopy[i].timeSelected = true;
+        setbuses(busesCopy);
       }
     }
   };
@@ -95,9 +97,13 @@ export const PickTimeAndLocation = props => {
             <TimeListItem
               value={time}
               buses={buses}
-              clicked={buses.timeSelected}
+              // clicked={buses.forEach(bus => {
+              //   if (bus.timeAtLocation === time) {
+              //     return bus.timeSelected;
+              //   }
+              // })}
               handleTimeSelected={checkLocationsWithBusesAtSelectedTime}
-              onClick={handleTimeSelect}
+              click={handleTimeSelect}
             />
             // <li
             //   className="time-list-item"

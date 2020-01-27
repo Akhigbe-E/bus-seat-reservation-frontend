@@ -30,13 +30,20 @@ export const TimeListItem = props => {
   //   const handleClicked = clicked => {
   //     setclicked(clicked);
   //   };
-  const { value, handleTimeSelected, buses, clicked } = props;
+  const { value, handleTimeSelected, buses, click } = props;
+  let clicked;
+  buses.forEach(bus => {
+    if (bus.timeAtLocation === value) {
+      clicked = bus.timeSelected;
+    }
+  });
   return (
     <React.Fragment>
       <li
         className={clicked ? "is-clicked time-list-item" : "time-list-item"}
         value={value}
         onClick={e => {
+          click(value);
           handleTimeSelected(e.target.value, buses);
           //   handleClicked(!clicked);
         }}
