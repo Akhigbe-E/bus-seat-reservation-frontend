@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./SelectSeat.css";
+import "./SelectSeat.scss";
 
 export const SelectSeat = props => {
   const [selected, setSelected] = useState(false);

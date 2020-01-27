@@ -7,6 +7,19 @@
   background-position: center;
   height: 245px;
   width: 375px;
+  margin-top: -24px;
+}
+.select-seat-header {
+  color: #1a3c69;
+  h2 {
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 5px;
+    padding-top: 66px;
+  }
+  p {
+    margin-bottom: 4px;
+  }
 }
 .bus {
   margin: 0 auto;
