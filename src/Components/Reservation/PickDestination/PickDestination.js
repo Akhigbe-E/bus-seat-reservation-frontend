@@ -41,6 +41,10 @@ export const PickDestination = props => {
   const handleDepartureClick = () => {
     props.history.push("/book");
   };
+  const handleDestinationClick = destination => {
+    let proceed = window.confirm(`Your Selected destination is ${destination}`);
+    if (proceed) props.history.push("/seat");
+  };
   return (
     <div>
       <div className="departure-f">
@@ -56,7 +60,12 @@ export const PickDestination = props => {
         </p>
         <ul className="destination-category-list animated slideInUp">
           {availableDestinations.map(({ destination, price }) => (
-            <div className="destination-category-list-item">
+            <div
+              className="destination-category-list-item"
+              onClick={e => {
+                handleDestinationClick(destination);
+              }}
+            >
               <li key={destination}>{destination}</li>
             </div>
           ))}
@@ -68,7 +77,13 @@ export const PickDestination = props => {
             {availableDestinations.map(({ destination, price }) => {
               if (price < 100) {
                 return (
-                  <div className="destination-category-list-item">
+                  <div
+                    className="destination-category-list-item"
+                    onClick={e => {
+                      console.log("be");
+                      handleDestinationClick(destination);
+                    }}
+                  >
                     <li key={destination}>{destination}</li>
                   </div>
                 );
