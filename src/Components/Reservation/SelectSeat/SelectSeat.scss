@@ -62,3 +62,45 @@ button {
   top: 12em;
   left: 2em;
 }
+
+.seat {
+  display: inline-block;
+}
+.first-row {
+  position: absolute;
+  top: 200px;
+  left: 30px;
+}
+.second-row {
+  position: absolute;
+  top: 270px;
+  left: 30px;
+}
+.third-row {
+  position: absolute;
+  top: 340px;
+  left: 30px;
+}
+.tags {
+  margin-top: 5px;
+  p {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 3px 13px;
+    border-radius: 15px;
+    font-weight: 500;
+    color: white;
+  }
+}
+.proceed-button-container {
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #ffc010;
+  width: 300px;
+  border-radius: 7px;
+  .proceed-button {
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+  }
+}
